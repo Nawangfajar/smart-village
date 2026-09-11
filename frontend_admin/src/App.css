@@ -1,0 +1,303 @@
+/* === Root Layout === */
+#root {
+  max-width: 100%;
+  margin: 0 auto;
+  font-family: "Poppins", sans-serif;
+  background-color: #f4f6f8;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* === Layout utama === */
+.dashboard-container {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  transition: all 0.3s ease;
+}
+
+/* ============================
+   SIDEBAR STYLE (Modern Look)
+   ============================ */
+.sidebar {
+  width: 260px;
+  background: linear-gradient(180deg, #0a4eb3, #083b8c);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+  transition: transform 0.3s ease, width 0.3s ease;
+  z-index: 900;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.15);
+  border-radius: 0 12px 12px 0;
+}
+
+.sidebar-header {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 30px;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+}
+
+/* ============================
+   SIDEBAR LOGO FIX
+   ============================ */
+.sidebar-logo {
+  width: 290px;              /* ukuran lebar logo */
+  height: auto;              /* tinggi otomatis biar proporsional */
+  margin: 0 auto -20px auto;  /* posisikan di tengah dengan jarak bawah */
+  display: block;
+  border-radius: 12px;       /* opsional: sudut membulat */
+  object-fit: contain;       /* jaga rasio logo */
+}
+
+/* === Garis putih di bawah logo (pemisah dari menu) === */
+.sidebar-divider {
+  width: 70%;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.7);
+  margin: 5px 0;
+}
+ /* ============================
+   SIDEBAR TITLE
+   ============================ */
+.sidebar-title {
+  font-size: 1.2rem;          /* 🔹 Ukuran tulisan lebih kecil (bisa disesuaikan, misal 0.9rem) */
+  font-weight: 700;         /* Sedikit lebih ringan dari 700 */
+  text-align: center;
+  margin-top: -10px;        /* Jarak atas kecil biar rapat dengan logo */
+  color: #fefeff;           /* Warna teks tetap lembut */
+  letter-spacing: 0.5px;
+}
+
+
+/* === NAVIGATION === */
+/* === NAVIGATION (CLEAN SIDEBAR) === */
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 0 18px;
+  margin-top: 19px;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem;
+  padding: 10px 4px;
+  color: #ffffff;
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.25s ease;
+  text-decoration: none;
+  background: transparent;          /* <-- ini wajib */
+  border: none;                     /* <-- ini hapus border tombol lama */
+}
+
+.nav-item .icon {
+  font-size: 1.2rem;
+}
+
+.nav-item.active {
+  background: #4a8bda;
+  color: #ffffff !important;
+  font-weight: 700;
+}
+
+.nav-item.active .icon {
+  color: #ffffff !important;
+}
+
+.nav-item.active:hover {
+  background: #4a8bda;
+  color: #ffffff !important;
+  transform: translateX(0);
+}
+
+
+
+/* Logout Button */
+.logout-button {
+  background: #dc3545;
+  color: white;
+  font-weight: 600;
+  margin-top: auto;
+  padding: 10px 18px;
+  border-radius: 8px;
+  margin: 0 15px 25px;
+  transition: all 0.25s ease;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.logout-button:hover {
+  background-color: #c82333;
+  box-shadow: 0 3px 10px rgba(220, 53, 69, 0.3);
+}
+
+/* Sidebar Footer */
+.sidebar-footer {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #fefeff;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: 310px;
+  margin-top: 10px;
+}
+
+/* ============================
+   MAIN CONTENT AREA
+   ============================ */
+.main-content {
+  flex-grow: 1;
+  background-color: #f9fafc;
+  padding: 25px 30px;
+  margin-left: 260px;
+  transition: margin-left 0.3s ease, padding 0.3s ease;
+}
+
+/* ============================
+   TOP BAR
+   ============================ */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 15px 20px;
+  border-radius: 12px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
+  margin-bottom: 20px;
+}
+
+.page-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #0d47a1;
+}
+
+.admin-label {
+  color: #1976d2;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+/* ============================
+   HAMBURGER ICON (Mobile)
+   ============================ */
+.hamburger {
+  display: none;
+  position: fixed;
+  top: 18px;
+  left: 20px;
+  background: #0d47a1;
+  color: white;
+  border: none;
+  font-size: 1.5rem;
+  border-radius: 6px;
+  padding: 6px 10px;
+  z-index: 1001;
+  cursor: pointer;
+  transition: background 0.25s;
+}
+
+.hamburger:hover {
+  background: #1565c0;
+}
+
+/* ============================
+   MOBILE RESPONSIVE
+   ============================ */
+@media (max-width: 768px) {
+  .dashboard-container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  /* Sidebar berubah jadi overlay */
+  .sidebar {
+    transform: translateX(-100%);
+    width: 240px;
+    position: fixed;
+    height: 100vh;
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  .main-content {
+    margin-left: 0 !important;
+    padding: 15px;
+  }
+
+  .topbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 12px 15px;
+  }
+
+  .page-title {
+    font-size: 1.2rem;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+
+
+.submenu {
+  margin-left: 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.submenu-item {
+  background: transparent;
+  border: none;
+  color: #e3f2fd;
+  padding: 10px 0;
+  text-align: left;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.submenu-item:hover {
+  color: white;
+}
+
+.submenu-item.active {
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.chevron {
+  margin-left: auto;
+}
+
+/* === CENTER WRAPPER DASHBOARD === */
+.dashboard-center {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.dashboard-center-inner {
+  width: 100%;
+  max-width: 1100px;
+}

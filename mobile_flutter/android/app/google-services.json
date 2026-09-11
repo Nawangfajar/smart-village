@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "17502235676",
+    "project_id": "padukuhan-v-c1829",
+    "storage_bucket": "padukuhan-v-c1829.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:17502235676:android:8ca985eba14f9b828483d9",
+        "android_client_info": {
+          "package_name": "com.example.padukuhan_v"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXWzPIuTwpWp9iyj30F8EwLnXGed2nGTI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
